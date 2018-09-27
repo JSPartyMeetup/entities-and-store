@@ -42,12 +42,6 @@ style: |
 
 Тут будет схематичный макет магазина
 
-## Выделим очевидное
-
-1. {:.next}Модель топора (model)
-2. {:.next}Конкретное предложение (offer)
-3. {:.next}Магазин-партнер (shop)
-
 ## Back to 2000
 
 Как бы мы это сделали в середине прошлого десятилетия?
@@ -55,9 +49,40 @@ style: |
 1. Какой-нибудь декларативный шаблонизатор (f.g. XSLT)
 2. Древовидный формат данных
 
-## Представим «стейт»
+## Представим «стор»
 
 или то, что мы отдаем шаблонизатору для первоначального рендеринга
+
+
+## Пример данных
+{:.fullscreen}
+```js
+[{
+    title: 'Axe 2000',
+    offers: [{
+        price: 500,
+        shop: {
+            title: 'Тверские топоры'
+        }
+    }, {
+        price: 200,
+        shop: {
+            title: 'Новгородские топоры'
+        }
+    }]
+}];
+```
+
+## Но что-то тут не так
+
+... Да, тут есть все, чтобы отрисовать страницу
+... Но непонятно, что есть что!
+
+## Выделим очевидное
+
+1. {:.next}Модель топора (model)
+2. {:.next}Конкретное предложение (offer)
+3. {:.next}Магазин-партнер (shop)
 
 ## Тут пример кода, а этот заголовок все равно не видно
 {:.fullscreen}
@@ -101,25 +126,27 @@ style: |
 3. {:.next}Возможно сделать единый источник истины для всего приложения
 
 ## Пример нормализованных данных
+{:.fullscreen}
+
 ```js
 {
     items: [{entity: 'offer', id: 1}],
-        entities: {
-            offer: {
-                "1": {
-                    entity: 'offer',
-                    id: 1,
-                    color: 'red',
-                    price: 500,
-                    shop: "shopId1",
-                },
+    entities: {
+        offer: {
+            "1": {
+                entity: 'offer',
+                id: 1,
+                shop: "shopId1",
             },
-            shop: {
+        },
+        shop: {
+           "shopId1": {
                 entity: 'shop',
                 title: 'Тверские топоры',
                 id: "shopId1",
             },
         },
+    },
 }
 ```
 
@@ -128,7 +155,7 @@ style: |
 Теперь менеджеры магазина хотят:
 
 1. Размещать произвольное количество каруселей с топорами в любой последовательности
-2. Первые карусели должны показываться сразу, не ожидая прогрузки всех из них
+2. Первые карусели должны показываться сразу, не ожидая прогрузки всех остальных
 
 ## Что поможет?
 
@@ -136,15 +163,15 @@ style: |
 
 Независимая часть приложения, которая:
 
-* сама знает, как получить и отрисовать данные
-* не влияет на другие виджеты
-* является error-boundary
+* {:.next}сама знает, как получить и отрисовать данные
+* {:.next}не влияет на другие виджеты
+* {:.next}является error-boundary
 
 работает полностью независимо от других виджетов.
 
 ## Звучит здорово, однако...
 
-... как же дедубликация данных?
+... как же дедупликация данных?
 
 ... как обеспечить независимость виджетов в store?
 
@@ -153,199 +180,108 @@ style: |
 1. {:.next}Разделение данных на данные виджета и коллекции
 2. {:.next}Своя версия connect
 
-## Заголовок
-{:.images .three}
+## Коллекции
 
-![](themes/yandex2/images/images-three.svg)
-*Текст*
+1. {:.next}Неупорядоченное хранилище сущностей по ключу
+2. {:.next}Доступно всем виджетам сразу
 
-![](themes/yandex2/images/images-three.svg)
-*Текст*
+## Данные виджета
 
-![](themes/yandex2/images/images-three.svg)
-*Текст*
+1. {:.next}Ключи для коллекций с сохранением нужного порядка
+2. {:.next}Данные, которые не являются сущностями и принадлежат именно этому виджету
 
-### Источник
-
-## Заголовок
-
-![](themes/yandex2/images/image-right.svg)
-{:.image-right}
-
-Основной текст
-
-**Ключевая мысль**
-
-- Маркированный список
-- Маркированный список
-
-1. Нумерованный список
-2. Нумерованный список
-
-### Источник
-
-## Заголовок
-
-<!-- библиотека пиктограмм https://patterns.yandex-team.ru/presentations?typeIn=icons -->
-
-![](themes/yandex2/images/icons.svg)
-{:.icon-left}
-
-Основной текст
-
-**Ключевая мысль**
-
-- Маркированный список
-- Маркированный список
-
-1. Нумерованный список
-2. Нумерованный список
-
-### Источник
-
-## Заголовок
-{:.icons}
-
-<!-- библиотека пиктограмм https://patterns.yandex-team.ru/presentations?typeIn=icons -->
-
-![](themes/yandex2/images/icons.svg)
-*Текст*
-
-![](themes/yandex2/images/icons.svg)
-*Текст*
-
-![](themes/yandex2/images/icons.svg)
-*Текст*
-
-### Источник
-
-## Заголовок
-{:.icons .four}
-
-<!-- библиотека пиктограмм https://patterns.yandex-team.ru/presentations?typeIn=icons -->
-
-![](themes/yandex2/images/icons.svg)
-*Текст*
-
-![](themes/yandex2/images/icons.svg)
-*Текст*
-
-![](themes/yandex2/images/icons.svg)
-*Текст*
-
-![](themes/yandex2/images/icons.svg)
-*Текст*
-
-### Источник
-
-## Заголовок
-{:.icons .five}
-
-<!-- библиотека пиктограмм https://patterns.yandex-team.ru/presentations?typeIn=icons -->
-
-![](themes/yandex2/images/icons.svg)
-*Текст*
-
-![](themes/yandex2/images/icons.svg)
-*Текст*
-
-![](themes/yandex2/images/icons.svg)
-*Текст*
-
-![](themes/yandex2/images/icons.svg)
-*Текст*
-
-![](themes/yandex2/images/icons.svg)
-*Текст*
-
-### Источник
-
-## Заголовок будет скрыт
-{:.fullscreen}
-
-![](themes/yandex2/images/images-fullscreen.svg)
-
-## Заголовок будет скрыт
-{:.fullscreen}
-
-![](themes/yandex2/images/images-fullscreen.svg)
-
-<figure markdown="1">
-Текст
-</figure>
-
-## Таблица
-
-|  Locavore     |  Umami       |  Helvetica |  Vegan     |
-+---------------|--------------|------------|------------+
-|  Fingerstache<br/>The second line |  Kale        |  Chips     |  Keytar    |
-|  Sriracha     |  Gluten-free |  Ennui     |  Keffiyeh  |
-|  Thundercats  |  Jean        |  Shorts    |  Biodiesel |
-|* Terry        |* Richardson  |* Swag      |* Blog      |
-
-Текст
-
-### Источник
-
-## Исходный код (html)
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Shower</title> <!--Comment-->
-    <link rel="stylesheet" href="screen.css">
-</head>
-<body>Hello!</body>
-</html>
-```
-
-## Исходный код (js)
-
-Пояснение для кода.
-
-```js
-var i, j, over, data = new Array(2, 34.12, 4.7, 0, 234, 5);
-var test = false;
-
-for (i = 1; i < data.length; i++) {
-    over = data[i]; 
-    for (j = i - 1; j >= 0 && data[j] > over; j--) {
-        data[j + 1] = data[j];
-    }
-    data[j + 1] = over;
-}
-alert(data.join(','));
-```
-
-## Исходный код (css)
-
-```css
-.head {
-    background-color: yellow;
-}
-
-.head__logo {
-    background-image: url(images/logo.svg);
-}
-
-#test, body {
-    font-weight: bold;
-}
-
-```
-
-## Этот заголовок будет скрыт
+## Пример
 {:.fullscreen}
 
 ```js
-// исходный код (на весь экран)
-
-var x = 10;
-for (var i = 0; i < x; i++) {
-    console.log('hello!');
+{
+    collections: {
+	  offer: {1: {...}, 2: {...}},
+	}
+	widgets: {
+	  "carousel1": {
+	     offerIds: [1, 2],
+	   },
+	  "carousel2": {
+	    offerIds: [2, 3],
+	  },
+	},
 }
 ```
+
+## Connect
+
+Чтобы гарантировать принцип независимости, используем свою обертку над connect
+
+1. {:.next}Ограничивает mapStateToProps коллекциями и данными виджета
+2. {:.next}В остальном работает точно так же, как и обычный connect
+
+## Хорошо, а что подгрузкой данных?
+
+1. {:.next}Виджеты сами знают, как сделать запрос за дополнительными данными
+2. {:.next}Виджеты сами могут обновить коллекции (это просто редюсер)
+
+## Все ли так хорошо?...
+
+... Нужно быть предельно аккуратными с сущностями
+... если поля могут отличаться в зависимости от контекста, то это отдельная сущность
+
+## Пример на топорах
+
+Мы хотим брать разную коммиссию в зависимости от места показа
+
+## Кодд
+{:.fullscreen}
+
+```js
+// First
+{
+    entity: 'offer',
+    color: 'red',
+    price: 500,
+    partnerUrl: '//tverskie-topori.com?comission=cheap
+},
+
+// Second
+{
+    entity: 'offer',
+    color: 'red',
+    price: 500,
+    partnerUrl: '//tverskie-topori.com?comission=expensive
+},
+```
+
+## Пересмотрим сущности
+
+... Теперь мы отрисовываем не предложения, а места показа
+... А уже конкретное место показа знает, какое это предложение
+
+## Code
+{:.fullscreen}
+
+```js
+{
+    collections: {
+	  offer: {1: {...}, 2: {...}},
+      showPlace: {"1_cheap": {entity: "showPlace", offerId: 1}}
+	}
+	widgets: {
+	  "carousel1": {
+	     showPlaceId: ["1_cheap"],
+	   },
+	},
+}
+```
+
+## PS
+
+Виджеты могут принести еще больше пользы
+
+* Прогрессивная отдача
+* Вложенность виджетов
+* Виджет как микросервис
+* И так далеее
+
 
 ## Контакты 
 {:.contacts}
@@ -382,13 +318,8 @@ for (var i = 0; i < x; i++) {
 -------
 
 <!-- left -->
-- {:.skype}author
-- {:.mail}author@yandex-team.ru
-- {:.github}author
-
-<!-- right -->
-- {:.twitter}@author
-- {:.facebook}author
+- {:.telegram}imalyavin
+- {:.mail}ilya.m32@yandex.ru
 
 <!-- 
 
