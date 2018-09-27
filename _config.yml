@@ -11,14 +11,14 @@ default_lang: en
 default_body_class: list
 
 presentation:
-    title: Название презентации
-    service: Название сервиса
+    title: Сущности, стейт и все-все-все
+    service: Яндекс.Маркет
     nda: false
     lang: ru            # ru, en
 
 author:
-    name: Автор
-    position: Должность
+    name: Илья Малявин
+    position: Разработчик интерфейсов
     company:
         name: Яндекс
         url:  http://yandex.ru/
