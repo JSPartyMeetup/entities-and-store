@@ -104,20 +104,15 @@ style: |
 ~~~ javascript
 [{
     entity: 'model',
-    title: 'Axe 2000',
     offers: [{
         entity: 'offer',
-        price: 500,
         shop: {
             entity: 'shop',
-            title: 'Тверские топоры'
         }
     }, {
         entity: 'offer',
-        price: 200,
         shop: {
             entity: 'shop',
-            title: 'Новгородские топоры'
         }
     }]
 }];
@@ -136,25 +131,20 @@ style: |
 3. {:.next}Такие данные сложно изменять
 
 ## Пример с дублированием данных
-{:.fullscreen}
 {:.big-code}
 
 ~~~ javascript
 [{
     entity: 'offer',
-    price: 500,
-    title: "Топор Витязь",
     shop: {
         entity: 'shop',
         title: 'Тверские топоры'
     }
 }, {
     entity: 'offer',
-    price: 400,
-    title: "Топор Витязь",
     shop: {
         entity: 'shop',
-        title: 'Новгородские топоры'
+        title: 'Тверские топоры'
     }
 }];
 ~~~
