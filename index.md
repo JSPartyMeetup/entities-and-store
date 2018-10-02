@@ -101,8 +101,7 @@ style: |
 2. {:.next}Конкретное предложение (offer)
 3. {:.next}Магазин-партнер (shop)
 
-## Схема с топорами
-[](pictures/entities.png)
+## ![](pictures/entities.png)
 {: .slide .cover .w  .center .center-align}
 
 ## Тут пример кода, а этот заголовок все равно не видно
