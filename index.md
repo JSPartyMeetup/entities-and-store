@@ -100,7 +100,7 @@ style: |
 ## ![img](pictures/entities.png)
 {: .slide .cover .w  .center .center-align}
 
-## Тут пример кода, а этот заголовок все равно не видно
+## Пометим сущности полем entity
 
 ~~~ javascript
 [{
@@ -163,7 +163,7 @@ style: |
 {:.fullscreen}
 {:.big-code}
 
-```js
+~~~ javascript
 {
     items: [{entity: 'offer', id: 1}],
     entities: {
@@ -182,7 +182,13 @@ style: |
         },
     },
 }
-```
+~~~
+
+## Итого
+
+* {:.next} Наши данные нормализованы и дедуплецированы
+* {:.next} Есть единый источник истины (redux store)
+* {:.next} Исходя из предыдущих пунктов, эти двнные удобно модифицировать
 
 ## Немного усложним задачу
 
@@ -241,14 +247,14 @@ style: |
 ```js
 {
     collections: {
-	  offer: {1: {...}, 2: {...}},
+	  offer: {1: {price: 500}, 2: {price: 200}},
 	}
 	widgets: {
-	  "carousel1": {
-	     offerIds: [1, 2],
+	  "axesPack1": {
+	     offerIds: [1, 2, 3, 2],
 	   },
-	  "carousel2": {
-	    offerIds: [2, 3],
+	  "axesPack2": {
+	    offerIds: [3, 3, 4, 5],
 	  },
 	},
 }
