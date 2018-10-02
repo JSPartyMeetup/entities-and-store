@@ -102,8 +102,7 @@ style: |
 3. {:.next}Магазин-партнер (shop)
 
 ## Схема с топорами
-
-![](pictures/entities.png)
+[](pictures/entities.png)
 {: .slide .cover .w  .center .center-align}
 
 ## Тут пример кода, а этот заголовок все равно не видно
@@ -201,7 +200,7 @@ style: |
 ## Иллюстрация множественных каруселей
 
 ## ![](pictures/second-design.png)
-{: .slide .cover .w  .center .cente.w }
+{: .slide .cover .w  .center }
 
 ## Что это значит с точки зрения разработки?
 
@@ -280,7 +279,7 @@ style: |
 
 ## PS
 
-Детальный рассказ про нашу виджетную систему
+Детальный рассказ про нашу виджетную систему от Паши Павелко:
 
 http://www.highload.ru/siberia/2018/abstracts/3682
 
