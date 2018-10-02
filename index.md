@@ -1,13 +1,9 @@
 ---
 
-layout: yandex2
+layout: default
 
 style: |
     /* собственные стили можно писать здесь!! */
-    .center-align {
-        text-align: center;
-    }
-
 
 ---
 
@@ -44,7 +40,7 @@ style: |
 
 У нас есть топоры разных моделей, цен и несколько партнеров-поставщиков
 
-## ![](pictures/first-design.png)
+## ![img](pictures/first-design.png)
 {: .slide .cover first-design.png)
 
 ## Back to 2000
@@ -101,7 +97,7 @@ style: |
 2. {:.next}Конкретное предложение (offer)
 3. {:.next}Магазин-партнер (shop)
 
-## ![](pictures/entities.png)
+## ![img](pictures/entities.png)
 {: .slide .cover .w  .center .center-align}
 
 ## Тут пример кода, а этот заголовок все равно не видно
@@ -198,7 +194,7 @@ style: |
 
 ## Иллюстрация множественных каруселей
 
-## ![](pictures/second-design.png)
+## ![img](pictures/second-design.png)
 {: .slide .cover .w  .center }
 
 ## Что это значит с точки зрения разработки?
@@ -272,15 +268,15 @@ style: |
 
 ## Подведем итог
 
-... * Всегда следует не адаптировать данные под макеты, а описывать бизнес-сущности
-... * Redux позволяет дедуплецировать и легко обновлять данные
-... * На его основе можно удобно сконструировать свою виджетную систему
+1. Всегда следует не адаптировать данные под макеты, а описывать бизнес-сущности
+2. Redux позволяет дедуплецировать и легко обновлять данные
+3. На его основе можно удобно сконструировать свою виджетную систему
 
 ## PS
 
 Детальный рассказ про нашу виджетную систему от Паши Павелко:
 
-http://www.highload.ru/siberia/2018/abstracts/3682
+<a href="http://www.highload.ru/siberia/2018/abstracts/3682">http://www.highload.ru/siberia/2018/abstracts/3682</a>
 
 ## Контакты 
 {:.contacts}
