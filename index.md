@@ -4,6 +4,9 @@ layout: yandex2
 
 style: |
     /* собственные стили можно писать здесь!! */
+    .center-align {
+        text-align: center;
+    }
 
 
 ---
@@ -42,7 +45,7 @@ style: |
 У нас есть топоры разных моделей, цен и несколько партнеров-поставщиков
 
 ## ![](pictures/first-design.png)
-{: .slide .cover .w }
+{: .slide .cover first-design.png)
 
 ## Back to 2000
 
@@ -100,7 +103,8 @@ style: |
 
 ## Схема с топорами
 
-Будет тут
+![](pictures/entities.png)
+{: .slide .cover .w  .center .center-align}
 
 ## Тут пример кода, а этот заголовок все равно не видно
 
@@ -197,7 +201,7 @@ style: |
 ## Иллюстрация множественных каруселей
 
 ## ![](pictures/second-design.png)
-{: .slide .cover .w }
+{: .slide .cover .w  .center .cente.w }
 
 ## Что это значит с точки зрения разработки?
 
