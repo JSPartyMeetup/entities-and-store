@@ -149,15 +149,15 @@ style: |
 
 Что это значит?
 
-1. {:.next}Redux by design подталкивает нас к нормализации
+1. {:.next}Redux подталкивает нас к нормализации
 2. {:.next}Нет дублирования в рамках одного стора
 3. {:.next}Возможно сделать единый источник истины для всего приложения
 
-## А что такое redux и store вообще?
--- ТУТ ОБЪЯСНЯЮЩАЯ КАРТИНКА --
-
 ## А что такое normalizr?
--- ТУТ ОПИСАНИЕ нормалайзера --
+
+Небольшая библиотека для конвертации вложенных данных в нормализованные на основе описанной схемы
+
+https://github.com/paularmstrong/normalizr
 
 ## Пример нормализованных данных
 {:.fullscreen}
@@ -165,19 +165,17 @@ style: |
 
 ~~~ javascript
 {
-    items: [{entity: 'offer', id: 1}],
+    items: [{entity: 'offer', id: 1}, {entity: 'offer', id: 2}],
     entities: {
         offer: {
             "1": {
                 entity: 'offer',
-                id: 1,
                 shop: "shopId1",
             },
         },
         shop: {
            "shopId1": {
                 entity: 'shop',
-                id: "shopId1",
             },
         },
     },
@@ -247,7 +245,8 @@ style: |
 ```js
 {
     collections: {
-	  offer: {1: {price: 500}, 2: {price: 200}},
+	  offer: {1: {price: 500}, 2: {price: 200}, 3: {price: 600}},
+      shops: {"shop1": {title: 'Новгородские топоры'}}
 	}
 	widgets: {
 	  "axesPack1": {
