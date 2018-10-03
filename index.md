@@ -147,10 +147,13 @@ style: |
 3. Легко и понятно, как написать селекторы, на что завязаться
 
 ## View data vs entities
+{:.images .two}
 
 ![](pictures/random-data-cats.gif)
+*view data*
 
 ![](pictures/entities-cats.jpeg)
+*entities*
 
 ## Однако есть и другие проблемы
 
@@ -233,7 +236,7 @@ https://github.com/paularmstrong/normalizr
 
 * Наши данные нормализованы и дедуплецированы
 * Есть единый источник истины (redux store)
-* Исходя из предыдущих пунктов, эти двнные удобно модифицировать
+* Исходя из предыдущих пунктов, эти данные удобно модифицировать
 
 ## Усложним задачу
 {:.section}
@@ -362,7 +365,7 @@ function mapStateToProps(widgetData, collections) {
 ```
 
 ## Если визуализировать
-## ![img](pictures/widgets-state.jpeg)
+![img](pictures/widgets-state.jpeg)
 
 ## Хорошо, а что подгрузкой данных?
 
