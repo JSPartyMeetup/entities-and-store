@@ -50,8 +50,9 @@ style: |
 
 У нас есть топоры разных моделей, цен и несколько партнеров-поставщиков
 
-## ![img](pictures/first-design.png)
-{: .slide .cover first-design.png)
+## ![](pictures/first-design.png)
+{: .slide .cover)
+
 
 ## Back to 2000
 
