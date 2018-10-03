@@ -23,6 +23,10 @@ style: |
         margin-top: 15px !important;
     }
 
+    .state-pic {
+        height: 800px;
+    }
+
 ---
 
 # ![](themes/yandex2/images/logo-{{ site.presentation.lang }}.svg){:.logo}
@@ -366,6 +370,7 @@ function mapStateToProps(widgetData, collections) {
 
 ## Если визуализировать
 ![img](pictures/widgets-state.jpeg)
+{:.state-pic}
 
 ## Хорошо, а что подгрузкой данных?
 
