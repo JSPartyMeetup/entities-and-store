@@ -3,17 +3,16 @@
 layout: default
 
 style: |
-    .big-code .slide-code {
+    .big-code {
         font-size: 30px !important;
         line-height: 42px !important;
     }
 
     .my-right-image {
-        float: right;
-        width: 1200px;
         position: absolute;
-        top: :0;
+        width: 1200px;
         top: 0;
+        left: 824px;
     }
 
 ---
@@ -116,14 +115,26 @@ style: |
 
 ~~~ javascript
 [{
+    title: 'Axe 2000',
     entity: 'model',
     offers: [{
         entity: 'offer',
+        price: 500,
         shop: {
             entity: 'shop',
+            title: 'Тверские топоры'
+        }
+    }, {
+        entity: 'offer',
+        price: 200,
+        shop: {
+            entity: 'shop',
+            title: 'Новгородские топоры'
         }
     }]
 }];
+{:.big-code}
+
 ~~~
 
 ## Почему стало лучшие?
