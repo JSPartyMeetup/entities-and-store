@@ -265,7 +265,7 @@ https://github.com/paularmstrong/normalizr
 ## Наше решение
 {:.section}
 
-##
+## Два пункта
 
 1. Разделение данных на данные виджета и коллекции
 2. Своя версия connect
@@ -311,6 +311,10 @@ https://github.com/paularmstrong/normalizr
 
 1. Ограничивает mapStateToProps коллекциями и данными виджета
 2. В остальном работает точно так же, как и обычный connect
+
+```js
+console.log
+```
 
 ## Если визуализировать
 ## ![img](pictures/widgets-state.jpeg)
