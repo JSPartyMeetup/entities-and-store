@@ -4,7 +4,7 @@ layout: default
 
 style: |
     .slide code {
-        font-size: 30px !important;
+        font-size: 32px !important;
         line-height: 42px !important;
     }
 
@@ -52,7 +52,7 @@ style: |
 
 ## ![](pictures/first-design.png)
 
-## empty slide
+##
 
 ##
 
@@ -66,10 +66,6 @@ style: |
 ## Представим «стейт»
 
 или то, что мы отдаем шаблонизатору для первоначального рендеринга
-
-
-## Пример данных
-{:.fullscreen}
 
 ```js
 [{
@@ -126,6 +122,7 @@ style: |
         price: 500,
         shop: {
             entity: 'shop',
+            id: "tverShop",
             title: 'Тверские топоры'
         }
     }, {
@@ -133,6 +130,7 @@ style: |
         price: 200,
         shop: {
             entity: 'shop',
+            id: "novgShop",
             title: 'Новгородские топоры'
         }
     }]
@@ -156,17 +154,25 @@ style: |
 
 ~~~ javascript
 [{
-    entity: 'offer',
-    shop: {
-        entity: 'shop',
-        title: 'Тверские топоры'
-    }
-}, {
-    entity: 'offer',
-    shop: {
-        entity: 'shop',
-        title: 'Тверские топоры'
-    }
+    title: 'Axe 2000',
+    entity: 'model',
+    offers: [{
+        entity: 'offer',
+        price: 500,
+        shop: {
+            entity: 'shop',
+            id: "tverShop",
+            title: 'Тверские топоры'
+        }
+    }, {
+        entity: 'offer',
+        price: 200,
+        shop: {
+            entity: 'shop',
+            id: "tverShop",
+            title: 'Тверские топоры'
+        }
+    }]
 }];
 ~~~
 
@@ -193,17 +199,19 @@ https://github.com/paularmstrong/normalizr
 
 ~~~ javascript
 {
-    items: [{entity: 'offer', id: 1}, {entity: 'offer', id: 2}],
+    items: [{entity: 'offer', id: 1}],
     entities: {
         offer: {
             "1": {
                 entity: 'offer',
-                shop: "shopId1",
+                price: 500,
+                shop: "tverShop",
             },
         },
         shop: {
-           "shopId1": {
+           "tverShop": {
                 entity: 'shop',
+                title: "Тверские топоры"
             },
         },
     },
