@@ -23,7 +23,7 @@ style: |
         margin-top: 15px !important;
     }
 
-    .state-pic {
+    .state-pic img {
         height: 800px;
     }
 
@@ -349,6 +349,10 @@ https://github.com/paularmstrong/normalizr
 }
 ```
 
+## Если визуализировать
+![](pictures/widgets-state.jpeg)
+{:.state-pic}
+
 ## Connect
 
 Чтобы гарантировать принцип независимости, используем свою обертку над connect
@@ -367,10 +371,6 @@ function mapStateToProps(widgetData, collections) {
     };
 }
 ```
-
-## Если визуализировать
-![img](pictures/widgets-state.jpeg)
-{:.state-pic}
 
 ## Хорошо, а что подгрузкой данных?
 
