@@ -29,4 +29,4 @@ author:
 #   position: Должность
 
 fork_url: https://github.yandex-team.ru/presentation/jekyller
-progress: true # отображение прогресс-бара в нижней части слайдов
+progress: false # отображение прогресс-бара в нижней части слайдов
