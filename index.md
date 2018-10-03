@@ -43,13 +43,12 @@ style: |
 
 </div>
 
-## Небольшой план
+## О чем поговорим?
 
-1. Вводная
-2. Бизнес-сущности
-3. Как это было раньше
-4. Подход в стиле redux
-5. Наш подход с виджетами
+1. Зачем нужны бизнес-сущности
+2. Как мы работали со стейтом раньше
+3. Подход в стиле redux
+4. Наш подход с виджетами в Маркете
 
 ## Вводная
 {:.section}
@@ -147,6 +146,12 @@ style: |
 2. Сущности остаются прежними вне зависимости от макета
 3. Легко и понятно, как написать селекторы, на что завязаться
 
+## View data vs entities
+
+![](pictures/random-data-cats.gif)
+
+![](pictures/entities-cats.jpeg)
+
 ## Однако есть и другие проблемы
 
 1. Дублирование данных
@@ -202,7 +207,10 @@ https://github.com/paularmstrong/normalizr
 
 ~~~ javascript
 {
-    items: [{entity: 'offer', id: 1}],
+    items: [{
+        entity: 'offer',
+        id: 1
+    }],
     entities: {
         offer: {
             "1": {
@@ -275,31 +283,60 @@ https://github.com/paularmstrong/normalizr
 1. Неупорядоченное хранилище сущностей по ключу
 2. Доступно всем виджетам сразу
 
+```js
+{
+    collections: {
+	    offer: {
+            1: {id: "1", price: 500, shop: "tverShop"},
+            2: {id: "2", price: 233, shop: "tverShop"},
+            3: {id: "3", price: 600, shop: "tverShop"},
+            4: {id: "4", price: 350, shop: "tverShop"},
+        },
+        shops: {"tverShop": {title: 'Новгородские топоры'}}
+	}
+}
+```
+
 ## Данные виджета
 
 1. Ключи для коллекций с сохранением нужного порядка
 2. Данные, которые не являются сущностями и принадлежат именно этому виджету
 
-## Пример
-{:.fullscreen}
-
 ```js
 {
-    collections: {
-	    offer: {
-            1: {price: 500, shop: "tverShop"},
-            2: {price: 233, shop: "tverShop"},
-            3: {price: 600, shop: "tverShop"},
-            4: {price: 350, shop: "tverShop"}
-        },
-        shops: {"tverShop": {title: 'Новгородские топоры'}}
-	}
 	widgets: {
 	    "axesPack1": {
 	        offerIds: [1, 2, 3],
 	    },
         "axesPack2": {
             offerIds: [2, 3, 4],
+	    },
+	},
+}
+```
+
+## Соберем все вместе
+{:.fullscreen}
+
+```js
+{
+    collections: {
+	    offer: {
+            1: {id: "1", price: 500, shop: "tverShop"},
+            2: {id: "2", price: 233, shop: "tverShop"},
+            3: {id: "3", price: 600, shop: "tverShop"},
+            4: {id: "4", price: 350, shop: "tverShop"},
+        },
+        shops: {"tverShop": {title: 'Новгородские топоры'}}
+	}
+	widgets: {
+	    "axesPack1": {
+	        offerIds: [1, 2, 3],
+            title: 'Топоры по лучшим ценам',
+	    },
+        "axesPack2": {
+            offerIds: [2, 3, 4],
+            title: 'Топоры специально для вас',
 	    },
 	},
 }
@@ -313,7 +350,15 @@ https://github.com/paularmstrong/normalizr
 2. В остальном работает точно так же, как и обычный connect
 
 ```js
-console.log
+function mapStateToProps(widgetData, collections) {
+    // Берем id нужных нам топоров
+    const {offerIds} = widgetData;
+
+    return {
+        // Для каждого id получаем сущность из коллекции
+        axes: offerIds.map(id => collections.offer[id]),
+    };
+}
 ```
 
 ## Если визуализировать
