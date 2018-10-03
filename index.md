@@ -112,6 +112,7 @@ style: |
 {:.my-right-image}
 
 ## Пометим сущности полем entity
+{:.big-code}
 
 ~~~ javascript
 [{
@@ -133,8 +134,6 @@ style: |
         }
     }]
 }];
-{:.big-code}
-
 ~~~
 
 ## Почему стало лучшие?
