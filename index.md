@@ -15,10 +15,9 @@ style: |
         left: 824px;
     }
 
-    .slide .h2 {
+    .slide h2 {
         margin-bottom: 15px !important;
     }
-
 
     .slide pre {
         margin-top: 15px !important;
