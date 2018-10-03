@@ -150,10 +150,10 @@ style: |
 {:.images .two}
 
 ![](pictures/random-data-cats.gif)
-*view data*
+*View data*
 
-![](pictures/entities-cats.jpeg)
-*entities*
+![](pictures/entities-cats.gif)
+*Entities*
 
 ## Однако есть и другие проблемы
 
