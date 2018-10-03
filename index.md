@@ -154,7 +154,6 @@ style: |
 3. Такие данные сложно изменять
 
 ## Пример с дублированием данных
-{:.fullscreen}
 
 ~~~ javascript
 [{
@@ -200,7 +199,6 @@ https://github.com/paularmstrong/normalizr
 ![](pictures/norm.png)
 
 ## Пример нормализованных данных
-{:.big-code}
 
 ~~~ javascript
 {
@@ -267,7 +265,7 @@ https://github.com/paularmstrong/normalizr
 ## Наше решение
 {:.section}
 
-## Ответ
+##
 
 1. Разделение данных на данные виджета и коллекции
 2. Своя версия connect
@@ -288,16 +286,21 @@ https://github.com/paularmstrong/normalizr
 ```js
 {
     collections: {
-	  offer: {1: {price: 500}, 2: {price: 200}, 3: {price: 600}},
-      shops: {"shop1": {title: 'Новгородские топоры'}}
+	    offer: {
+            1: {price: 500, shop: "tverShop"},
+            2: {price: 233, shop: "tverShop"},
+            3: {price: 600, shop: "tverShop"},
+            4: {price: 350, shop: "tverShop"}
+        },
+        shops: {"tverShop": {title: 'Новгородские топоры'}}
 	}
 	widgets: {
-	  "axesPack1": {
-	     offerIds: [1, 2, 3, 2],
-	   },
-	  "axesPack2": {
-	    offerIds: [3, 3, 4, 5],
-	  },
+	    "axesPack1": {
+	        offerIds: [1, 2, 3],
+	    },
+        "axesPack2": {
+            offerIds: [2, 3, 4],
+	    },
 	},
 }
 ```
