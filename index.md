@@ -3,10 +3,10 @@
 layout: default
 
 style: |
-    .big-code {
-        font-size: 14px;
+    .big-code .slide-code {
+        font-size: 30px;
+        line-height: 42px;
     }
-
 
 ---
 
