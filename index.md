@@ -52,6 +52,10 @@ style: |
 
 ## ![](pictures/first-design.png)
 
+## empty slide
+
+##
+
 ## Back to 2000
 
 Как бы мы это сделали в середине прошлого десятилетия?
