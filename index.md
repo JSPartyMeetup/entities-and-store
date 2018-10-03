@@ -15,6 +15,15 @@ style: |
         left: 824px;
     }
 
+    .slide .h2 {
+        margin-bottom: 15px !important;
+    }
+
+
+    .slide pre {
+        margin-top: 15px !important;
+    }
+
 ---
 
 # ![](themes/yandex2/images/logo-{{ site.presentation.lang }}.svg){:.logo}
