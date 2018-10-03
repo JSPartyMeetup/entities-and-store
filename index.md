@@ -109,7 +109,7 @@ style: |
 3. Магазин-партнер (shop)
 
 ![](pictures/entities.png)
-{:.image-right .my-right-image}
+{:.image-right :.my-right-image}
 
 ## Пометим сущности полем entity
 
