@@ -3,7 +3,10 @@
 layout: default
 
 style: |
-    /* собственные стили можно писать здесь!! */
+    .big-code {
+        font-size: 14px;
+    }
+
 
 ---
 
@@ -98,8 +101,8 @@ style: |
 2. Конкретное предложение (offer)
 3. Магазин-партнер (shop)
 
-## ![img](pictures/entities.png)
-{: .slide .cover .w  .center .center-align}
+![](pictures/entities.png)
+{:.image-right}
 
 ## Пометим сущности полем entity
 
@@ -148,7 +151,8 @@ style: |
 
 ## Наше время
 {:.section}
-Redux и normalizr во фронтенде
+
+## Redux и normalizr во фронтенде
 
 Что это значит?
 
