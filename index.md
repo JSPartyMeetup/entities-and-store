@@ -4,8 +4,8 @@ layout: default
 
 style: |
     .slide code {
-        font-size: 32px !important;
-        line-height: 42px !important;
+        font-size: 30px !important;
+        line-height: 40px !important;
     }
 
     .my-right-image {
@@ -192,7 +192,6 @@ https://github.com/paularmstrong/normalizr
 ![](pictures/norm.png)
 
 ## Пример нормализованных данных
-{:.fullscreen}
 {:.big-code}
 
 ~~~ javascript
