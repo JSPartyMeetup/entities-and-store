@@ -3,7 +3,7 @@
 layout: default
 
 style: |
-    .big-code {
+    .slide code {
         font-size: 30px !important;
         line-height: 42px !important;
     }
