@@ -9,6 +9,7 @@ style: |
     }
 
     .my-right-image {
+        float: right;
         width: 1200px;
         position: absolute;
         top: :0;
@@ -109,7 +110,7 @@ style: |
 3. Магазин-партнер (shop)
 
 ![](pictures/entities.png)
-{:.image-right :.my-right-image}
+{:.my-right-image}
 
 ## Пометим сущности полем entity
 
