@@ -8,6 +8,13 @@ style: |
         line-height: 42px !important;
     }
 
+    .my-right-image {
+        width: 1200px;
+        position: absolute;
+        top: :0;
+        top: 0;
+    }
+
 ---
 
 # ![](themes/yandex2/images/logo-{{ site.presentation.lang }}.svg){:.logo}
@@ -95,14 +102,14 @@ style: |
 2. Как описать связи между этими сущностями?
 3. Как их хранить и как с ними работать?
 
-## Выделим бизнес-сущности
+## Выделим сущности
 
 1. Модель топора (model)
 2. Конкретное предложение (offer)
 3. Магазин-партнер (shop)
 
 ![](pictures/entities.png)
-{:.image-right}
+{:.image-right .my-right-image}
 
 ## Пометим сущности полем entity
 
